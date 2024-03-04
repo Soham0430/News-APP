@@ -30,9 +30,8 @@ const Search = () => {
     // Trigger news update when searchQuery changes
     if (searchQuery) {
       updateNews();
-     setsearchQuery("");
     }
-  }, [setsearchQuery,searchQuery]);
+  }, [searchQuery]);
 
   return (
     <>

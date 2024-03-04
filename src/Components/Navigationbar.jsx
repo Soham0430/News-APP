@@ -7,7 +7,9 @@ const Navigationbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const {searchQuery, setsearchQuery} = useContext(UserContext);
-
+  const setsearch=()=>{
+    setsearchQuery("");
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,6 +48,7 @@ const Navigationbar = () => {
                 />
                 <button
               onClick={handleSubmit}
+
               className="ms-2 bg-blue-900 font-bold text-white p-2 rounded"
                 >
                     <NavLink
@@ -64,6 +67,7 @@ const Navigationbar = () => {
                     className="  text-white   font-bold text-sm"
                     to={navItem.page}
                     key={uuidv4()}
+                    onClick={setsearch}
                   >
                     {navItem.nav}
                   </NavLink>
@@ -96,6 +100,8 @@ const Navigationbar = () => {
                 className="  text-white   font-bold text-sm"
                 to={navItem.page}
                 key={uuidv4()}
+                onClick={setsearch}
+
               >
                 {navItem.nav}
               </NavLink>
